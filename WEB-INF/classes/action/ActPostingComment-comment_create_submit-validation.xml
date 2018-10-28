@@ -1,0 +1,16 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+
+<validators>
+
+	
+	<field name="postingcomment.Comment">
+		<field-validator type="requiredstring">
+			<message>*</message>
+		</field-validator>
+	</field>
+	
+	
+
+</validators>

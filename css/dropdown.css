@@ -1,0 +1,22 @@
+
+select{
+width:200px;
+height:30px;
+box-shadow:1px 1px 3px indigo;
+color:indigo;
+}
+
+.styled-select1 select{
+color:indigo;
+width:200px;
+overflow:hidden;
+}
+
+.style1{
+height:30px;
+box-shadow:1px 1px 3px indigo;
+color:indigo;
+}
+
+
+

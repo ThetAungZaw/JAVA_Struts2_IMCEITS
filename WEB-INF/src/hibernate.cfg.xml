@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="format_sql">true</property>
+		<property name="connection.autocommit">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- validate- existing schema -->
+		<!-- update- only update your schema once created -->
+		<!-- create- create schema every time -->
+
+
+
+
+
+		<!-- MSSQL Server Configuration -->
+
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://SOMETHING;databaseName=DBSSS</property>
+<!-- 		<property name="hibernate.connection.url">jdbc:sqlserver://SHAW-PC\SQLSERVER2014;databaseName=DBSSS</property> -->
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">123</property>
+
+
+
+
+
+		<!-- Oracle Server Configuration -->
+
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property> -->
+		<!-- <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property> -->
+		<!-- <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property> -->
+		<!-- <property name="hibernate.connection.pool_size">10</property> -->
+		<!-- <property name="hibernate.connection.username">system</property> -->
+		<!-- <property name="hibernate.connection.password">sys</property> -->
+
+
+
+
+
+		<!-- Entity Class Mapping -->
+
+		<mapping class="entity.Answer" />
+		<mapping class="entity.Language" />
+		<mapping class="entity.Lecture" />
+		<mapping class="entity.Section" />
+		<mapping class="entity.PostData" />
+		<mapping class="entity.PostingComment" />
+		<mapping class="entity.PostingLike" />
+		<mapping class="entity.Question" />
+		<mapping class="entity.Suggestion" />
+		<mapping class="entity.User" />
+
+
+
+
+
+	</session-factory>
+</hibernate-configuration>

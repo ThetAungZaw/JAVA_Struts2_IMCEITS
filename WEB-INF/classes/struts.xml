@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="IMCEITS_resources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<!-- A new result type i.e. 'tiles' is added so that Tiles listener class 
+			could process requests for these kinds of results -->
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="masterhome" class="action.ActHome" method="funHome">
+			<result name="success" type="tiles">masterhome</result>
+		</action>
+		<action name="masterhome_logout" class="action.ActUser" method="user_logout">
+			<result name="success" type="tiles">masterhome</result>
+		</action>
+
+
+
+
+		<action name="software" class="action.ActLanguage" method="fill">
+			<result name="success" type="tiles">software</result>
+		</action>
+
+		
+
+	
+
+
+		
+
+		<action name="sharing" class="action.ActSharing" method="fill_post">
+			<result name="success" type="tiles">sharing</result>
+		</action>
+		<action name="about" class="action.ActHome" method="funInactive">
+			<result name="success" type="tiles">about</result>
+		</action>
+		
+		<action name="login" class="action.ActUser" method="loginFun">
+			<result name="success" type="tiles">login</result>
+		</action>
+
+		<!-- Thinzar -->
+		<action name="register" class="action.ActHome" method="funInactive">
+			<result name="success" type="tiles">register</result>
+		</action>
+
+
+
+		<action name="register_save" class="action.ActUser" method="create">			
+			<result name="success" type="redirectAction"> software  </result>
+			<result name="input" type="tiles">register</result>
+		</action>
+
+
+
+		<!-- Thinzar End -->
+
+<!-- 		<action name="profile_edit" class="action.ActHome" method="funInactive"> -->
+<!-- 			<result name="success" type="tiles">profile_edit</result> -->
+<!-- 		</action> -->
+
+		<action name="selected_language" class="action.ActLecture_learning"
+			method="execute">
+			<result name="success" type="tiles">selected_language</result>
+		</action>
+
+		<action name="adminhome">
+			<result name="success" type="tiles">adminhome</result>
+		</action>
+		<action name="contact" class="action.ActHome" method="funInactive">
+			<result name="success" type="tiles">contact</result>
+		</action>
+		<action name="trycode" class="action.ActTryCode" method="execute">
+			<result name="success" type="tiles">trycode</result>
+		</action>
+
+
+		<!-- For Admin Action -->
+
+
+		<!-- For Admin Action language -->
+		<action name="language" class="action.ActLanguage" method="fill">
+			<result name="success" type="tiles">language</result>
+		</action>
+		<action name="language_edit" class="action.ActLanguage">
+			<result name="success" type="tiles">language_edit</result>
+		</action>
+
+		<action name="language_edit_submit" class="action.ActLanguage"
+			method="edit">
+			<result name="success" type="tiles">language</result>
+			<result name="input" type="tiles">language_edit</result>
+		</action>
+
+		<action name="language_delete" class="action.ActLanguage">
+			<result name="success" type="tiles">language_delete</result>
+		</action>
+		
+		<action name="language_search" class="action.ActLanguage" method="search">
+	<result name="success" type="tiles">language</result>
+</action>
+
+		<action name="language_delete_submit" class="action.ActLanguage"
+			method="delete">
+			<result name="success" type="tiles">language</result>
+		</action>
+
+
+		<action name="language_create" class="action.ActLanguage">
+			<result name="success" type="tiles">language_create</result>
+		</action>
+		<action name="language_create_submit" class="action.ActLanguage"
+			method="create">
+			<result name="success" type="tiles">language</result>
+			<result name="input" type="tiles">language_create</result>
+		</action>
+
+		<!-- nan myat -->
+		<!-- For Admin Action lecture -->
+		<action name="lecture" class="action.ActLecture" method="fill">
+			<result name="success" type="tiles">lecture</result>
+		</action>
+		<action name="lecture_edit" class="action.ActLecture" method="edit_preparation">
+			<result name="success" type="tiles">lecture_edit</result>
+		</action>
+		<action name="lecture_edit_save" class="action.ActLecture"
+			method="edit">
+			<result name="success" type="tiles">lecture</result>
+			<result name="input" type="tiles">lecture_edit</result>
+		</action>
+
+		<action name="lecture_delete" class="action.ActLecture">
+			<result name="success" type="tiles">lecture_delete</result>
+		</action>
+		<action name="lecture_delete_submit" class="action.ActLecture"
+			method="delete">
+			<result name="success" type="tiles">lecture</result>
+		</action>
+
+		<action name="lecture_create" class="action.ActLecture" method="create_preparation">
+			<result name="success" type="tiles">lecture_create</result>
+		</action>
+		<action name="lecture_create_save" class="action.ActLecture"
+			method="create">
+			<result name="success" type="tiles">lecture</result>
+			<result name="input" type="tiles">lecture_create</result>
+		</action>
+		
+		<!-- Lecture search -->
+		<action name="lecture_search" class="action.ActLecture" method="search">
+			<result name="success" type="tiles">lecture</result>
+		</action>
+		
+		<action name="act_lecture_search" class="action.ActLecture" method="search_lecture">
+			<result name="success" type="tiles">lecture</result>
+		</action>
+		
+		<action name="lecture_detail" class="action.ActLecture">
+			<result name="success" type="tiles">lecture_detail</result>
+		</action>
+
+		<!-- nan myat End -->
+
+
+
+		<!-- roll 10 -->
+
+		<!-- For Admin Action post -->
+		<action name="post" class="action.ActPostData" method="fill">
+			<result name="success" type="tiles">post</result>
+		</action>
+		<action name="post_edit">
+			<result name="success" type="tiles">post_edit</result>
+		</action>
+		<action name="post_delete" class="action.ActPostData">
+			<result name="success" type="tiles">post_delete</result>
+		</action>
+		<action name="post_delete_submit" class="action.ActPostData"
+			method="delete">
+			<result name="success" type="tiles">post</result>
+		</action>
+		<action name="post_create" class="action.ActPostData">
+			<result name="success" type="tiles">post_create</result>
+		</action>
+
+		<action name="post_create_submit" class="action.ActPostData"
+			method="create">
+			<result name="success" type="tiles">post</result>
+			<result name="input" type="tiles">post_create</result>
+		</action>
+		<action name="post_search_submit" class="action.ActPostData"
+			method="search">
+			<result name="success" type="tiles">post</result>
+		</action>
+
+
+	<!-- 2079 -->
+		<action name="post_detail" class="action.ActPostData">
+			<result name="success" type="tiles">post_detail</result>
+		</action>
+	<!-- 2079 -->
+	
+
+		<!-- For Admin Comment -->
+		<action name="comment" class="action.ActPostingComment" method="fill">
+			<result name="success" type="tiles">comment</result>
+		</action>
+		<action name="comment_edit">
+			<result name="success" type="tiles">comment_edit</result>
+		</action>
+		<action name="comment_delete" class="action.ActPostingComment">
+			<result name="success" type="tiles">comment_delete</result>
+		</action>
+		<action name="comment_delete_submit" class="action.ActPostingComment"
+			method="delete">
+			<result name="success" type="tiles">comment</result>
+		</action>
+		<action name="comment_create" class="action.ActPostingComment"
+			method="createpreparation">
+			<result name="success" type="tiles">comment_create</result>
+		</action>
+		<action name="comment_create_submit" class="action.ActPostingComment"
+			method="create">
+			<result name="success" type="tiles">comment</result>
+			<result name="input" type="tiles">comment_create</result>
+		</action>
+		<action name="comment_search_submit" class="action.ActPostingComment"
+			method="search">
+			<result name="success" type="tiles">comment</result>
+		</action>
+
+
+		<!-- For Admin Action Answer -->
+		<action name="answer" class="action.ActAnswer" method="fill">
+			<result name="success" type="tiles">answer</result>
+		</action>
+
+	
+
+		<action name="back_to_answer" class="action.ActAnswer" method="fill">
+			<result name="success" type="tiles">answer</result>
+		</action>
+
+
+		<action name="answer_edit" class="action.ActAnswer">
+			<result name="success" type="tiles">answer_edit</result>
+		</action>
+		
+		<action name="answer_edit_submit" class="action.ActAnswer" method="edit">
+			<result name="success" type="tiles">answer</result>
+		</action>
+		
+		<action name="answer_delete" class="action.ActAnswer" method="fun_answer_delete">
+			<result name="success" type="tiles">answer_delete</result>
+		</action>
+		<action name="answer_delete_submit" class="action.ActAnswer"
+			method="delete">
+			<result name="success" type="tiles">answer</result>
+		</action>
+		<action name="answer_create" class="action.ActAnswer">
+			<result name="success" type="tiles">answer_create</result>
+		</action>
+		<action name="answer_create_submit" class="action.ActAnswer"
+			method="create">
+			<result name="success" type="tiles">answer</result>
+			<result name="input" type="tiles">answer_create</result>
+		</action>
+
+		<action name="answer_search_submit" class="action.ActAnswer"
+			method="search">
+			<result name="success" type="tiles">answer</result>
+		</action>
+
+		<!-- roll 10 End -->
+
+		<!-- thet aung zaw -->
+
+		<!-- For Admin Action question -->
+		<action name="question" class="action.ActQuestion" method="fill">
+			<result name="success" type="tiles">question</result>
+		</action>
+		<action name="question_delete" class="action.ActQuestion">
+			<result name="success" type="tiles">question_delete</result>
+		</action>
+		<action name="question_delete_submit" class="action.ActQuestion"
+			method="delete">
+			<result name="success" type="tiles">question</result>
+		</action>
+		<action name="question_create" class="action.ActQuestion"
+			method="create_preparation">
+			<result name="success" type="tiles">question_create</result>
+		</action>
+		<action name="question_create_submit" class="action.ActQuestion"
+			method="create">
+			<result name="success" type="tiles">question</result>
+			<result name="input" type="tiles">question_create</result>
+		</action>
+		<action name="question_search_submit" class="action.ActQuestion"
+			method="search">
+			<result name="success" type="tiles">question</result>
+		</action>
+
+	<!-- 2079 -->
+		<action name="question_detail" class="action.ActQuestion">
+			<result name="success" type="tiles">question_detail</result>
+		</action>
+	<!-- 2079 -->
+
+
+		<!-- thet aung zaw End -->
+
+
+		<action name="member" class="action.ActUser" method="fill">
+			<result name="success" type="tiles">member</result>
+		</action>
+		<action name="user_search" class="action.ActUser" method="search">
+			<result name="success" type="tiles">member</result>
+		</action>
+		
+		<!-- Thor Kyi -->
+		<!-- For Admin Action section -->
+		<action name="section" class="action.ActSection" method="fill">
+			<result name="success" type="tiles">section</result>
+		</action>
+
+		<action name="section_search" class="action.ActSection" method="search">
+			<result name="success" type="tiles">section</result>
+		</action>
+
+		<action name="section_edit" class="action.ActSection">
+			<result name="success" type="tiles">section_edit</result>
+		</action>
+		<action name="section_edit_save" class="action.ActSection"
+			method="edit">
+			<result name="success" type="tiles">section</result>
+			<result name="input" type="tiles">section_edit</result>
+		</action>
+
+		<action name="section_delete" class="action.ActSection">
+			<result name="success" type="tiles">section_delete</result>
+		</action>
+		<action name="section_delete_submit" class="action.ActSection"
+			method="delete">
+			<result name="success" type="tiles">section</result>
+		</action>
+		<action name="section_create" class="action.ActSection">
+			<result name="success" type="tiles">section_create</result>
+		</action>
+		<action name="section_create_save" class="action.ActSection"
+			method="create">
+			<result name="success" type="tiles">section</result>
+			<result name="input" type="tiles">section_create</result>
+		</action>
+
+		<!-- Thor Kyi End -->
+
+
+		<!-- For Admin Action user -->
+		<action name="user">
+			<result name="success" type="tiles">user</result>
+		</action>
+		<action name="user_edit">
+			<result name="success" type="tiles">user_edit</result>
+		</action>
+		<action name="user_delete">
+			<result name="success" type="tiles">user_delete</result>
+		</action>
+		<action name="user_create">
+			<result name="success" type="tiles">user_create</result>
+		</action>
+
+
+
+
+
+
+		<!-- Teacher -->
+		<action name="user_suggest" class="action.ActSuggestion" method="funInactive">
+			<result name="success" type="tiles">user_suggest</result>
+		</action>
+
+		<action name="user_suggest_submit" class="action.ActSuggestion"
+			method="create">
+			<result name="success" type="tiles">user_suggest_submit</result>
+			<result name="input" type="tiles">user_suggest_submit</result>
+		</action>
+
+		<action name="suggest" class="action.ActSuggestion" method="fill">
+			<result name="success" type="tiles">suggest</result>
+		</action>
+
+		<action name="suggest_delete" class="action.ActSuggestion">
+			<result name="success" type="tiles">suggest_delete</result>
+		</action>
+		<action name="suggest_delete_submit" class="action.ActSuggestion"
+			method="delete">
+			<result name="success" type="tiles">suggest_delete_submit</result>
+		</action>
+
+		<action name="suggest_search" class="action.ActSuggestion"
+			method="search">
+			<result name="success" type="tiles">suggest</result>
+		</action>
+
+		<action name="suggest_edit" class="action.ActSuggestion">
+			<result name="success" type="tiles">suggest_edit</result>
+		</action>
+
+		<action name="suggest_edit_submit" class="action.ActSuggestion"
+			method="edit">
+			<result name="success" type="tiles">suggest</result>
+		</action>
+		<!-- Teacher End -->
+
+
+		<!-- Khun Chan -->
+		<!--user posting data -->
+		<action name="user_posting_data" class="action.ActSharing"
+			method="create_post">
+			<result name="success" type="tiles">sharing</result>
+			<result name="input" type="tiles">sharing</result>
+		</action>
+
+		<!-- user like -->
+		<action name="user_like" class="action.ActSharing" method="create_like">
+			<result name="success" type="tiles">sharing</result>
+		</action>
+
+		<!--user posting comment -->
+		<action name="user_posting_comment" class="action.ActSharing"
+			method="create_comment">
+			<result name="success" type="tiles">sharing</result>
+			<result name="input" type="tiles">sharing</result>
+		</action>
+		<!-- Khun Chan End -->
+
+
+		<!-- NYEIN -->
+		<!-- append -->
+		<action name="profile_edit" class="action.ActUser" method="user_retrieve">
+			<result name="success" type="tiles">profile_edit</result>
+		</action>
+		<action name="act_edit_profile" class="action.ActUser" method="edit">
+			<result name="success" type="redirectAction">masterhome</result>			
+			<result name="input" type="tiles">profile_edit</result>
+		</action>
+		<!-- NYEIN End -->
+
+
+
+
+		<action name="act_login" class="action.ActUser" method="login_check">
+			<result name="SuccessAdmin" type="redirectAction"> language </result>
+			<result name="success" type="redirectAction"> software  </result><!--  call action 
+				name within this struts -->
+			<result name="input" type="tiles"> login </result>
+		</action>
+		
+
+
+<!-- Seek Action Collection -->
+		<action name="seek" class="action.ActSeek" method="select">
+			<result name="success" type="tiles">seek</result>
+		</action>
+		
+		<action name="answer_save" class="action.ActSeek" method="saveanswer">
+			<result name="success" type="tiles">seek</result>
+			<result name="input" type="tiles">seek</result>					
+		</action>
+
+		<action name="select" class="action.ActSeek" method="selectq">
+			<result name="success" type="tiles">seek</result>
+		</action>
+	
+		<action name="saveques" class="action.ActSeek" method="saveQuestiontable">
+			<result name="success" type="tiles">seek</result>
+			<result name="input" type="tiles">seek</result>
+		</action>
+		
+		<!-- End Seek Action Collection -->
+
+	</package>
+</struts>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<!-- Create a base layout that will serve as a template for all pages on 
+	this website -->
+<tiles-definitions>
+
+	<!-- For First Design -->
+	<definition name="homeLayout" template="/views/homelayout/masterpage.jsp">
+		<put-attribute name="masterCss" value="css/w3.css" type="string" />
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/homelayout/header.jsp" />
+		<put-attribute name="menu_login" value="/views/homelayout/menu_login.jsp" />
+		<put-attribute name="menu_logout" value="/views/homelayout/menu_logout.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="sideleft" value="/views/homelayout/sidebar.jsp" />
+		<put-attribute name="masterCss" value="css/MasterStyle.css"
+			type="string" />
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="footer" value="/views/homelayout/footer.jsp" />
+	</definition>
+	<definition name="masterhome" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/masterhome.jsp" />
+	</definition>
+	<definition name="software" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/software.jsp" />
+	</definition>
+	<definition name="about" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/about.jsp" />
+	</definition>
+	<definition name="seek" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/seek/seek_index.jsp" />
+	</definition>
+	<definition name="sharing" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/sharing/sharing_index.jsp" />
+	</definition>
+
+	<definition name="register" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="body" value="/views/register/register.jsp" />
+	</definition>
+	<definition name="profile_edit" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/register/register_edit.jsp" />
+	</definition>
+	<definition name="show_register" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/register/show_register.jsp" />
+	</definition>
+	<definition name="contact" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/contact.jsp" />
+	</definition>
+	<definition name="trycode" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="menu_login" value="" />
+		<put-attribute name="menu_logout" value="" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/trycode.jsp" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	<definition name="user_suggest" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/user_suggest.jsp" />
+	</definition>
+	
+	
+	<!-- For Second Design -->
+	<definition name="baseLayout" template="/views/secondlayout/SecondMasterpage.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/views/secondlayout/Banner.jsp" />
+		<put-attribute name="masterCss" value="css/MasterStyle.css"
+			type="string" />
+		<put-attribute name="menu"
+			value="/views/secondlayout/NavigationMenu.jsp" />
+		<put-attribute name="sideright" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/views/secondlayout/Copyright.jsp" />
+	</definition>
+	
+	
+<!-- 	<definition name="login" extends="baseLayout"> -->
+<!-- 		<put-attribute name="pageCss" value="css/w3.css" /> -->
+<!-- 		<put-attribute name="sideright" value="/views/secondlayout/htmlside.jsp" /> -->
+<!-- 		<put-attribute name="body" value="/views/HTMLearn.jsp" /> -->
+<!-- 	</definition> -->
+	
+	
+	<definition name="login" extends="homeLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="body" value="/views/login/login.jsp" />
+	</definition>
+	
+
+	<!-- for selected language learning page -->
+	<definition name="selected_language" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright"
+			value="/views/secondlayout/sectionside.jsp" />
+		<put-attribute name="body" value="/views/lecture_learning.jsp" />
+	</definition>
+
+
+
+	<!-- for ADMIN page -->
+	<definition name="adminhome" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/language/index.jsp" />
+	</definition>
+	<!-- for ADMIN Answer page -->
+	<definition name="answer" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/answer/index.jsp" />
+	</definition>
+	<definition name="answer_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/answer/edit.jsp" />
+	</definition>
+	<definition name="answer_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/answer/delete.jsp" />
+	</definition>
+	<definition name="answer_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/answer/create.jsp" />
+	</definition>
+	<!-- for ADMIN Comment page -->
+	<definition name="comment" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/comment/index.jsp" />
+	</definition>
+	<definition name="comment_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/comment/edit.jsp" />
+	</definition>
+	<definition name="comment_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/comment/delete.jsp" />
+	</definition>
+	<definition name="comment_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/comment/create.jsp" />
+	</definition>
+	<!-- for ADMIN Language page -->
+	<definition name="language" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/language/index.jsp" />
+	</definition>
+	<definition name="language_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/language/edit.jsp" />
+	</definition>
+	<definition name="language_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/language/delete.jsp" />
+	</definition>
+	<definition name="language_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/language/create.jsp" />
+	</definition>
+
+	<!-- for ADMIN lecuture page -->
+	<definition name="lecture" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/lecture/index.jsp" />
+	</definition>
+	<definition name="lecture_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/lecture/edit.jsp" />
+	</definition>
+	<definition name="lecture_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/lecture/delete.jsp" />
+	</definition>
+	<definition name="lecture_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/lecture/create.jsp" />
+	</definition>
+	
+	<definition name="lecture_detail" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/lecture/detail.jsp" />
+	</definition>
+
+	<!-- for ADMIN post page -->
+	<definition name="post" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/post/index.jsp" />
+	</definition>
+	<definition name="post_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/post/edit.jsp" />
+	</definition>
+	<definition name="post_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/post/delete.jsp" />
+	</definition>
+	<definition name="post_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/post/create.jsp" />
+	</definition>
+	
+		<!-- 2079 -->
+	<definition name="post_detail" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/post/detail.jsp" />
+	</definition>
+<!-- 2079 -->
+
+	<!-- for ADMIN question page -->
+	<definition name="question" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/question/index.jsp" />
+	</definition>
+	<definition name="question_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/question/edit.jsp" />
+	</definition>
+	<definition name="question_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/question/delete.jsp" />
+	</definition>
+	<definition name="question_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/question/create.jsp" />
+	</definition>
+	
+	<!-- 2079 -->
+	<definition name="question_detail" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/question/detail.jsp" />
+	</definition>
+<!-- 2079 -->
+	
+	
+	<definition name="member" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/user/index.jsp" />
+	</definition>
+	
+	
+	<!-- for ADMIN Section page -->
+	<definition name="section" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/section/index.jsp" />
+	</definition>
+	<definition name="section_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/section/edit.jsp" />
+	</definition>
+	<definition name="section_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/section/delete.jsp" />
+	</definition>
+	<definition name="section_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/section/create.jsp" />
+	</definition>
+	<!-- for ADMIN Suggest page -->
+	<definition name="suggest" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/suggest/index.jsp" />
+	</definition>
+	<definition name="suggest_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/suggest/create.jsp" />
+	</definition>
+	<definition name="suggest_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/suggest/edit.jsp" />
+	</definition>
+	<definition name="suggest_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body"
+			value="/views/Adminpage/suggest/delete.jsp" />
+	</definition>
+
+	<!-- for ADMIN user page -->
+	<definition name="user" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/user/index.jsp" />
+	</definition>
+	<definition name="user_edit" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/user/edit.jsp" />
+	</definition>
+	<definition name="user_delete" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/user/delete.jsp" />
+	</definition>
+	<definition name="user_create" extends="baseLayout">
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+		<put-attribute name="body" value="/views/Adminpage/user/create.jsp" />
+	</definition>
+	
+<!-- 	Teacher  -->
+<definition name="user_suggest_submit" extends="homeLayout">		
+		<put-attribute name="pageCss" value="css/w3.css" />
+		<put-attribute name="sideleft" value="" />
+		<put-attribute name="body" value="/views/user_suggest.jsp" />
+	</definition>
+	
+	
+	<definition name="suggest_delete_submit" extends="baseLayout">		
+			<put-attribute name="pageCss" value="css/w3.css" /> 
+			<put-attribute name="sideright" value="/views/secondlayout/adminside.jsp" />
+			<put-attribute name="body" value="/views/Adminpage/suggest/index.jsp" />
+			</definition>
+	
+	<!-- 	Teacher  End -->
+
+</tiles-definitions>

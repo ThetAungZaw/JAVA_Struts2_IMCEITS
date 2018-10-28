@@ -1,0 +1,42 @@
+@CHARSET "ISO-8859-1";
+#wrap{
+		position:relative;		
+		top: 106px;
+		margin:5px;
+		width:100%;
+		height:700px;
+		border-bottom:2px solid #86A100;
+}
+
+#sideright{
+		position:absolute;		
+		
+		left:2%;
+		width:25%;
+		z-index:3;
+		border-right-color:blue;
+		
+}
+
+
+/*specify position of 'contentarea' div to be 150px on left(this is essential because this much space will be taken by 'menu' div) and 0px on top from 'wrap' div */
+#contentarea{
+		position:absolute;	
+		left:10%;	
+		top:0px;
+		height:550px;
+		width:60%;
+		padding-top:35px;
+		padding-bottom: 5px;
+}
+/*specify position of 'footer' div to be 0px from left and 705px from top(since, this much space will be taken by 'contentarea' div) with respect to 'wrap' div*/
+#footer{
+		position:absolute;
+		width:100%;
+		left:0px;
+		
+		clear:both;
+		
+}
+
+			
